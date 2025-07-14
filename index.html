@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTP Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #83a4d4, #b6fbff);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .otp-box {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 20px 0;
+      letter-spacing: 4px;
+      color: #0077cc;
+    }
+
+    button {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Random OTP Generator</h2>
+    <div class="otp-box" id="otpDisplay">------</div>
+    <button onclick="generateOTP()">Generate OTP</button>
+  </div>
+
+  <script>
+    // This function generates a 6-digit OTP
+    function generateOTP() {
+      let otp = "";
+      for (let i = 0; i < 6; i++) {
+        otp +=Math.floor(Math.random() * 10);
+      }
+      document.getElementById("otpDisplay").textContent = otp;
+    }
+  </script>
+
+</body>
+</html>
